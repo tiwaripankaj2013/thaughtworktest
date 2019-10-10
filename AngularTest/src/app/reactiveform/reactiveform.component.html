@@ -1,0 +1,51 @@
+<form [formGroup]='userForm' (ngSubmit)='formSubmitted(userForm.value);'>
+
+    <div class="form-row">
+        <label for="">First Name</label>
+        <input type="text" placeholder="first name" formControlName="firstName" />
+
+        <!-- <div class='error' *ngIf="(userForm.controls['firstName'].touched || userForm.controls['firstName'].dirty) &&  custForm.controls['firstName'].invalid">
+            <div class='danger' *ngIf="userForm.controls['firstName'].errors.required">First Name is rquired!!</div>				
+            <div *ngIf="userForm.controls['firstName'].errors.minlength">First Name should have at least 4 characters!!</div>				
+            <div *ngIf="userForm.controls['firstName'].errors.maxlength">First Name can not exceed more then 10 characters!!</div>				
+        </div> -->
+    </div>
+    <div class="form-row">
+        <label for="">Last Name</label>
+        <input type="text" placeholder="first name" formControlName="lastName" />
+
+        <!-- <div class='error' *ngIf="(userForm.controls['lastName'].touched || userForm.controls['lastName'].dirty) &&  custForm.controls['lastName'].invalid">
+                <div class='danger' *ngIf="userForm.controls['lastName'].errors.required">First Name is rquired!!</div>				
+                <div *ngIf="userForm.controls['lastName'].errors.minlength">First Name should have at least 4 characters!!</div>				
+                <div *ngIf="userForm.controls['lastName'].errors.maxlength">First Name can not exceed more then 10 characters!!</div>				
+            </div> -->
+
+    </div>
+    <div class="form-row">
+        <label for="">Email</label>
+        <input type="email" placeholder="email" formControlName="email" />
+
+        <!-- <div class='error' *ngIf="(userForm.controls['email'].touched || userForm.controls['email'].dirty) &&  custForm.controls['email'].invalid">
+                <div class='danger' *ngIf="userForm.controls['email'].errors.required">email id is required!!</div>				
+            </div> -->
+    </div>
+    <div class="form-row">
+        <label for="">Gender</label>
+        <input type="radio" value="male" formControlName="gender" name="gender"/>Male
+        <input type="radio" formControlName="gender"  value="female"/>Female
+        
+    </div>
+    <div class="form-row">
+            <label for="">Phone</label>
+            <input type="tel" placeholder="phone" formControlName="phone"/>
+
+            <!-- <div class='error' *ngIf="(userForm.controls['phone'].touched || userForm.controls['phone'].dirty) &&  custForm.controls['phone'].invalid">
+                <div class='danger' *ngIf="userForm.controls['phone'].errors.required">email id is required!!</div>				
+            </div> -->
+        </div>
+
+        <input type="submit" value="submit" [disabled]="!userForm.valid">
+
+        <!-- <p>Form Data :{{userForm.controls.submit.data | json}}</p>
+        <p>Form status : {{userForm.status}}</p> -->
+</form>
